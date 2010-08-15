@@ -1,0 +1,23 @@
+Puppet module: subversion
+
+# Written by Tom McGonagle #
+# mcgonagle@gmail.com
+# Google Voice (617)229-5185
+# http://www.puppetll.com
+
+
+DESCRIPTION:
+This module installs and manages subversion
+Standard and extended classes are available.
+Decide and customize how you want to define configation files: static files, templates, infile modifications...
+
+
+USAGE:
+# Standard Classes 
+include subversion              # Install and run subversion with standard configurations.
+include subversion::disable     # Disable subversion service.
+include subversion::disableboot # Disable subversion service at boot time, but don't stop if it's running.
+include subversion::absent      # Remove subversion package.
+
+DEPENDENCIES:
+common::untar-gz 

@@ -1,0 +1,11 @@
+define apache::config_def($template_name = "httpd.conf.erb") {
+   require apache::params
+
+	file { "${apache::params::configfile}":
+	 #content => template ("apache/${role}/${template_name}"),
+	 content => template ("${apache::params::template_file}"),
+	 #content => template ("apache/${template_name}"),
+	 owner => "root", group => "root", mode => "0644",
+	 notify => Service["apache"],
+	}
+}
